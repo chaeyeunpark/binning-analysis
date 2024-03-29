@@ -23,3 +23,5 @@ if (BA_BUILD_EXAMPLES)
     target_link_libraries(1d_ising_mcmc PRIVATE binning_analysis)
     set_property(TARGET 1d_ising_mcmc PROPERTY CXX_STANDARD 20)
 endif()
+
+export(TARGETS binning_analysis NAMESPACE BinningAnalysis:: FILE BinningAnalysis.cmake)

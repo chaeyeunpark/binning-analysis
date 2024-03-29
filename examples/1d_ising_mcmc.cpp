@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		auto mean = log_binning.mean();
-		auto corrs = log_binning.vars();
+		auto corrs = log_binning.corrs();
 
 		std::cout << beta << "\t" << mean << "\t";
 		for(auto x: corrs) {
@@ -86,6 +86,7 @@ int main(int argc, char* argv[]) {
 		}
 		std::cout << std::endl;
 
+		/*
 		double Z = 0.0;
 		double emean = 0.0;
 		double esqr = 0.0;
@@ -101,6 +102,7 @@ int main(int argc, char* argv[]) {
 
 		// For uncorrelated sample
 		std::cout << emean << "\t" << (esqr - emean*emean) << std::endl;
+		*/
 	}
 
 	return 0;
