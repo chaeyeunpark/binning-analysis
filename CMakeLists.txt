@@ -14,8 +14,8 @@ if(NOT COMPILER_SUPPORTS_CXX20)
     message(FATAL_ERROR "binning-analysis requires a compiler with C++20 support")
 endif()
 
-add_library(binning_analysis INTERFACE)
-target_include_directories(binning_analysis INTERFACE "${PROJECT_SOURCE_DIR}/include")
+add_library(binning_analysis_lib INTERFACE)
+target_include_directories(binning_analysis_lib INTERFACE "${PROJECT_SOURCE_DIR}/include")
 
 
 if (BA_BUILD_EXAMPLES)
@@ -24,4 +24,4 @@ if (BA_BUILD_EXAMPLES)
     set_property(TARGET 1d_ising_mcmc PROPERTY CXX_STANDARD 20)
 endif()
 
-export(TARGETS binning_analysis NAMESPACE BinningAnalysis:: FILE BinningAnalysis.cmake)
+export(TARGETS binning_analysis_lib NAMESPACE BinningAnalysis:: FILE BinningAnalysis.cmake)
